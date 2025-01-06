@@ -1,8 +1,6 @@
-// @ts-ignore
-// POUR RETIRER L'ERREUR
+
 import type { Choice, PromptType } from "prompts";
-// POUR RETIRER L'ERREUR
-// @ts-ignore
+
 import prompts from "prompts";
 
 export interface CLIChoice extends Choice {
