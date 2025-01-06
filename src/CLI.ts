@@ -1,8 +1,13 @@
+// @ts-ignore
+// POUR RETIRER L'ERREUR
 import type { Choice, PromptType } from "prompts";
-
+// POUR RETIRER L'ERREUR
+// @ts-ignore
 import prompts from "prompts";
 
 export interface CLIChoice extends Choice {
+  value: any;// POUR RETIRER L'ERREUR
+  title: any;// POUR RETIRER L'ERREUR
   action: Function;
 }
 
@@ -14,6 +19,8 @@ export class CLI {
    * An array of choices available in the CLI menu.
    */
   public choices: CLIChoice[] = [];
+  //PROCESS ANY POUR RETIRER L'ERREUR
+  private process: any;
 
   /**
    * Creates an instance of the CLI class.
@@ -86,6 +93,6 @@ export class CLI {
     await new Promise((resolve) => setTimeout(resolve, randomTime * 1000));
 
     console.log("Au revoir !");
-    process.exit(0);
+    this.process.exit(0);
   }
 }
