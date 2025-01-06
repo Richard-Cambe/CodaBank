@@ -15,6 +15,7 @@ console.log(startupParts.join("\n"));
 
 // TODO
 
+// @ts-ignore
 const cli = new CLI([
   {
     title: "Créer un compte",
