@@ -10,10 +10,7 @@
 
 ### Liste des choix possibles
 - Il faudra cependant compléter les fonctions pour qu'ils fassent ce qui est attendu !
-### Quitter
-**Cette fonctionnalité est déjà implémentée, vous n'avez rien à faire !**
-- L'utilisateur doit pouvoir quitter l'application
-
+- 
 ## Contraintes
 ### Technologies
 - Vous devez utiliser Typescript _(interdiction d'utiliser un fichier Javascript)_

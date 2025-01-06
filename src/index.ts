@@ -20,7 +20,7 @@ const cli = new CLI([
     title: "Créer un compte",
     value: "create",
     action: () => {
-      console.log("Création d'un compte");
+      console.log("Votre compte a été créé !");
     },
   },
 ]);
