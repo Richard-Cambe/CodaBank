@@ -1,16 +1,6 @@
-L'utilisateur doit pouvoir se connecter uniquement avec son code personnel _(PIN)_
+Il n'y a pas de base de données, vous pouvez stocker les données en mémoire _(pas de persistance)_.
 
-Il n'y a pas de base de données, vous pouvez stocker les données en mémoire _(pas de persistance)_
-
-Si le code PIN est incorrect, l'utilisateur doit être notifié
-
-Vous devez respecter les principes de sécurité _(pas de stockage en clair du code PIN, utilisez un algorithme de hachage comme bcrypt ou argon2 par exemple)_
-
-Les messages d'erreur doivent être explicites, sans donner d'informations sensibles ou compromettant la sécurité de l'application
-
-
-
-
+Vous devez respecter les principes de sécurité _(pas de stockage en clair du code PIN, utilisez un algorithme de hachage comme bcrypt ou argon2 par exemple)_.
 
 
 BONUS :

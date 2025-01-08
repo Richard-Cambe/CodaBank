@@ -36,11 +36,11 @@ export function Login(cli: CLI): void | null {
     else {
         while (tryPIN < 3) {
             tryPIN++;
-            console.log(`PIN incorrect veuillez réessayer.`);
+            console.log(`\x1b[31mPIN incorrect veuillez réessayer.\x1b[0m\``);
             Login(cli)
         }
         if (tryPIN >= 3) {
-            console.log(`Trop de tentatives ont échoué, veuillez réessayer plus tard.`);
+            console.log(`\x1b[31mTrop de tentatives ont échoué, veuillez réessayer plus tard.\x1b[0m\``);
             process.exit()
         }
     }
