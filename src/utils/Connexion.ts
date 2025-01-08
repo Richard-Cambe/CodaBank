@@ -19,21 +19,21 @@ const users: User[] = [
     }
 ];
 
-function findMe(PIN: string): User | null {
+export function findMe(PIN: string): User | null {
     return users.find(user => user.PIN === PIN) || null;
 }
 
 let tryPIN: number = 0
 
-export function Login(cli: CLI): void | null {
+export function Login(cli: CLI): User | null {
     const PIN: string = prompt("Entrez votre PIN : ");
     const user: User | null = findMe(PIN);
 
     if (user) {
         console.log(`Bienvenue, ${user.name}`);
+        return user;
         cli.menu()
-    }
-    else {
+    } else {
         while (tryPIN < 3) {
             tryPIN++;
             console.log(`\x1b[31mPIN incorrect veuillez réessayer.\x1b[0m\``);

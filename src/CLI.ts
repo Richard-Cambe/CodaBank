@@ -1,5 +1,6 @@
 import type { Choice, PromptType } from "prompts";
 import prompts from "prompts";
+import { User } from "./models/user";
 
 export interface CLIChoice extends Choice {
     action: Function;
@@ -13,13 +14,16 @@ export class CLI {
      * An array of choices available in the CLI menu.
      */
     public choices: CLIChoice[] = [];
+    public user : User | null;
 
     /**
      * Creates an instance of the CLI class.
      * @param choices - An array of CLIChoice objects to initialize the CLI with.
+     * @param user ----> J'AI AJOUTE CA AUTOMATIQUEMENT EN AJOUTANT user:USER DANS LES PARAMETRES DU CONSTRUCTEUR
      */
-    constructor(choices: CLIChoice[] = []) {
+    constructor(choices: CLIChoice[] = [], user: User | null) {
         this.choices = choices;
+        this.user = user;
     }
 
     /**
@@ -69,7 +73,7 @@ export class CLI {
             (choice) => choice.value === response.action
         );
 
-        if (choice) await choice.action();
+        if (choice) await choice.action(this.user);
         else await this.quit();
 
         console.log("\n");

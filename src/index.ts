@@ -18,42 +18,38 @@ const startupParts = [
 
 console.log(startupParts.join("\n"));
 
+console.log(`Bonjour, veuillez vous connecter: `);
+const user:User | null = Login()
+
 const cli = new CLI([
     {
         title: "Déposer de l'argent",
         value: "deposit",
-        action: () => {
-            Deposit()
+        action: (user:User) => {
+            Deposit(user)
         },
     },
     {
         title: "Retirer de l'argent",
         value: "withdraw",
-        action: () => {
-            Withdraw()
+        action: (user:User) => {
+            Withdraw(user)
         },
     },
     {
         title: "Consulter l'historique des mouvements",
         value: "checkHistory",
-        action: () => {
-            displayHistory()
+        action: (user:User) => {
+            displayHistory(user)
         },
     },
     {
         title: "Consulter mon solde",
         value: "balance",
-        action: () => {
-            console.log(users[1].balance)
-
+        action: (user:User) => {
+            console.log(`Vous avez actuellement ${user.balance}€)`)
         },
     }
-]);
+], user);
+cli.menu()
 
-/* AVANT QUE LE MENU S'AFFICHE, JE VEUX QUE MON UTILISATEUR SE CONNECTE
-MAIS OBLIGE DE METTRE CES DEUX LIGNES APRES CAR
-LA CONST CLI N'EXISTE PAS ENCORE SI JE LES MET AVANT ET N'EST DONC
-PAS ACCESSIBLE PAR LE LOGIN
- */
-console.log(`Bonjour, veuillez vous connecter: `);
-Login(cli)
