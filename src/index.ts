@@ -68,6 +68,7 @@ const cli = new CLI([
         value: "balance",
         action: () => {
             console.log(users[1].balance)
+
         },
     }
 ]);

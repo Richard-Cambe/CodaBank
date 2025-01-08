@@ -1,6 +1,3 @@
-// - L'historique doit contenir la date
-// - L'historique doit afficher les 10 dernières opérations, mais doit tout de même enregistrer toutes les opérations effectuées sans limite
-
 import {User} from "../models/user";
 
 let history: string[] = []
@@ -13,10 +10,11 @@ export function getHistory(): string[] {
     return history
 }
 
-export function displayHistory(users : User): void {
+export function displayHistory(users: User): void {
     const history: string[] = getHistory()
 
-    history.forEach((entry: string, index: number): void =>
-        console.log(index + 1, entry, "\n")
-    )
+    const last10:string[] = history.reverse().slice(0,10)
+        last10.forEach((entry: string, index: number): void =>
+            console.log(entry)
+        )
 }
