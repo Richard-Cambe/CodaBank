@@ -3,7 +3,7 @@ import {User} from "../models/user";
 import {pushToHistory} from "./CheckHistory";
 
 export function Deposit(user: User): void {
-    const prompt :Prompt = promptSync();
+    const prompt: Prompt = promptSync();
 
     const addPrompt: string | null = prompt("Entrez la somme à déposer : ");
 
@@ -11,7 +11,7 @@ export function Deposit(user: User): void {
 
     if (amount < 1) {
         pushToHistory(`ECHEC DE DEPOT: ${amount}`)
-        console.log("Echec: Ajouter un montant supérieur à 1€")
+        console.log("\x1b[31m", "Echec: Ajouter un montant supérieur à 1€")
     } else {
         user.balance += amount;
         pushToHistory(`DEPOT: ${amount}€. SOLDE : ${user.balance}€`);

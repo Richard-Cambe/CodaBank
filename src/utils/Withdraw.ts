@@ -11,10 +11,10 @@ export function Withdraw(user: User): void {
 
     if (amount > user.balance) {
         pushToHistory(`ECHEC DE RETRAIT: ${amount}`)
-        console.log("Vous avez actuellement ", user.balance, "vous ne pouvez pas retirer plus.");
+        console.log("\x1b[31m","Vous avez actuellement ", user.balance, "vous ne pouvez pas retirer plus.");
     } else {
         user.balance -= amount;
         pushToHistory(`RETRAIT: ${amount}€. SOLDE : ${user.balance}€`);
-        console.log("Vous retirez ", amount, "€, il vous reste ", user.balance, "€.")
+        console.log("Vous retirez ", amount,"€, il vous reste ", user.balance, "€.")
     }
 }

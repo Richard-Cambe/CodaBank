@@ -60,7 +60,7 @@ const cli = new CLI([
         title: "Consulter l'historique des mouvements",
         value: "checkHistory",
         action: () => {
-            displayHistory()
+            displayHistory(users[1])
         },
     },
     {
