@@ -3,6 +3,7 @@ import {Deposit} from "./utils/Deposit";
 import {Withdraw} from "./utils/Withdraw";
 import {User} from "./models/user"
 import {displayHistory} from "./utils/CheckHistory";
+import {Login} from "./utils/Connexion";
 
 const startupParts = [
     "   __________  ____  ___       ____  ___    _   ____ __",
@@ -17,50 +18,26 @@ const startupParts = [
 
 console.log(startupParts.join("\n"));
 
-// TODO
-
-const users: User[] = [
-    {
-        id: 1,
-        name: "Richard",
-        PIN: "1234",
-        balance: 100
-    },
-    {
-        id: 2,
-        name: "Maxence",
-        PIN: "1234",
-        balance: 150
-    }
-];
-
 const cli = new CLI([
-    {
-        title: "Créer un compte",
-        value: "create",
-        action: () => {
-            console.log("Votre compte a été créé !");
-        },
-    },
     {
         title: "Déposer de l'argent",
         value: "deposit",
         action: () => {
-            Deposit(users[1])
+            Deposit()
         },
     },
     {
         title: "Retirer de l'argent",
         value: "withdraw",
         action: () => {
-            Withdraw(users[1])
+            Withdraw()
         },
     },
     {
         title: "Consulter l'historique des mouvements",
         value: "checkHistory",
         action: () => {
-            displayHistory(users[1])
+            displayHistory()
         },
     },
     {
@@ -73,4 +50,10 @@ const cli = new CLI([
     }
 ]);
 
-cli.menu();
+/* AVANT QUE LE MENU S'AFFICHE, JE VEUX QUE MON UTILISATEUR SE CONNECTE
+MAIS OBLIGE DE METTRE CES DEUX LIGNES APRES CAR
+LA CONST CLI N'EXISTE PAS ENCORE SI JE LES MET AVANT ET N'EST DONC
+PAS ACCESSIBLE PAR LE LOGIN
+ */
+console.log(`Bonjour, veuillez vous connecter: `);
+Login(cli)

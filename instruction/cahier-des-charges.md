@@ -2,13 +2,7 @@ L'utilisateur doit pouvoir se connecter uniquement avec son code personnel _(PIN
 
 Il n'y a pas de base de données, vous pouvez stocker les données en mémoire _(pas de persistance)_
 
-La connexion est obligatoire pour accéder à l'application
-
 Si le code PIN est incorrect, l'utilisateur doit être notifié
-
-Après 3 tentatives invalides, l'application doit se fermer
-
-Le projet doit utiliser à minima la version 18 de NodeJS
 
 Vous devez respecter les principes de sécurité _(pas de stockage en clair du code PIN, utilisez un algorithme de hachage comme bcrypt ou argon2 par exemple)_
 

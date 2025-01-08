@@ -1,5 +1,4 @@
 import type { Choice, PromptType } from "prompts";
-
 import prompts from "prompts";
 
 export interface CLIChoice extends Choice {
@@ -52,7 +51,7 @@ export class CLI {
      * If a choice is selected, its action is executed.
      * If "Quitter" is selected, calls the `quit` method.
      */
-    public async menu() {
+    public async menu(): Promise<void> {
         const response = await prompts({
             type: "select",
             name: "action",
