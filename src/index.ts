@@ -52,4 +52,3 @@ const cli = new CLI([
     }
 ], user);
 cli.menu()
-
