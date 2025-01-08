@@ -10,6 +10,7 @@ export function Withdraw(user: User): void {
     const amount: number = withdrawPrompt ? parseInt(withdrawPrompt) : 0
 
     if (amount > user.balance) {
+        pushToHistory(`Echec de retrait: ${amount}`)
         console.log("Vous avez actuellement ", user.balance, "vous ne pouvez pas retirer plus.");
     } else {
         user.balance -= amount;

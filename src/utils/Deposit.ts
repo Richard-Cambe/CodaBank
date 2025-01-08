@@ -10,7 +10,8 @@ export function Deposit(user: User): void {
     const amount: number = addPrompt ? parseInt(addPrompt) : 0
 
     if (amount < 1) {
-        console.log("Merci d'ajouter un montant supérieur à 1€")
+        pushToHistory(`Echec de dépot: ${amount}`)
+        console.log("Echec: Ajouter un montant supérieur à 1€")
     } else {
         user.balance += amount;
         pushToHistory(`Dépot: ${amount}€. SOLDE : ${user.balance}€`);

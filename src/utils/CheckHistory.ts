@@ -20,5 +20,6 @@ export function displayHistory(): void {
     const history = getHistory()
 
     history.forEach((entry, index) =>
-        console.log(index + 1, entry, "\n"))
+            console.log(index + 1, entry, "\n")
+    )
 }
