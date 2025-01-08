@@ -1,11 +1,30 @@
+# INSTALL CODABANK #
+:bank: Clone the project on Github
 
-1. Cloner le projet sur github
-2. Utiliser npm start ou yarn start pour le démarrer
-3. Pour se connecter il est possible d'utiliser les codes "1234" ou "5678" 
-4. Ensuite il ne reste plus qu'à jouer avec les menus.
-5. Déposer de l'argent permet de déposer des sommes supérieures à 0 et dans le cas d'un nombre negatif, le - est ignoré.
-6. Retirer de l'argent ne permet pas de retirer plus que ce qui est disponible. 
-7. Consulter le solder permet de voir combien on a sur le compte
-8. Consulter l'historique permet d'afficher les 10 derniers mouvements sur le compte
-9. Quitter ferme l'application. 
-10. Voila.
+# START CODABANK #
+Use *'**node -v**'* command to make sure your Node version is **at least 18.0**
+
+Use *'**npm start**'* or *'**yarn start**'* depending on your preferences
+
+# CONNECT TO CODABANK #
+Type a "PIN" (1234 or 5678, these are two different users).
+
+# USE CODABANK #
+:moneybag: **Déposer de l'argent :**
+  - Make a deposit of minimum 1€ (a notification in the console will tell you if your deposit has been accepted or not).
+  - :bulb: If you try to make a negative deposit, the minus symbol will be ignored and the deposit will be accepted.
+  - If you try to make a deposit of 0€, you'll see an error notification
+
+:dollar: **Retirer de l'argent :**
+  - You can take the money out of your bank account
+  - You will receive a notification in the console if everything goes well, or not
+  - :bulb: Nope, you will not be able to take out more than what you have, isn't it a pity ?
+    
+:euro: **Consulter le solde :**
+  - Displays your current balance in the console
+
+:chart_with_upwards_trend: **Consulter l'historique :**
+  - Displays in the console the 10 last movements that happened on your account. 
+
+:no_entry_sign: **Quitter :**
+  - Closes the app 
