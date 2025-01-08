@@ -8,3 +8,4 @@
 7. Consulter le solder permet de voir combien on a sur le compte
 8. Consulter l'historique permet d'afficher les 10 derniers mouvements sur le compte
 9. Quitter ferme l'application. 
+10. Voila.
