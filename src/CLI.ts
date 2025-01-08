@@ -1,10 +1,8 @@
-import type {Choice, PromptType} from "prompts";
+import type { Choice, PromptType } from "prompts";
 
 import prompts from "prompts";
 
 export interface CLIChoice extends Choice {
-    value: string;
-    title: string;
     action: Function;
 }
 
@@ -16,8 +14,6 @@ export class CLI {
      * An array of choices available in the CLI menu.
      */
     public choices: CLIChoice[] = [];
-// PROCESS ANY POUR RETIRER L'ERREUR
-    private process: any;
 
     /**
      * Creates an instance of the CLI class.
@@ -66,7 +62,7 @@ export class CLI {
                     title: choice.title,
                     value: choice.value,
                 })),
-                {title: "Quitter", value: "quit"},
+                { title: "Quitter", value: "quit" },
             ],
         });
 
@@ -81,12 +77,15 @@ export class CLI {
         this.menu();
     }
 
-    /* Quit the CLI and exit the program. Waits for a random time between 0 and 2 seconds before exiting.*/
+    /**
+     * Quit the CLI and exit the program.
+     * Waits for a random time between 0 and 2 seconds before exiting.
+     */
     private async quit() {
         const randomTime = Math.floor(Math.random() * 2); // Random time between 0 and 2 seconds
         await new Promise((resolve) => setTimeout(resolve, randomTime * 1000));
 
         console.log("Au revoir !");
-        this.process.exit(0);
+        process.exit(0);
     }
 }
