@@ -2,6 +2,7 @@ import {CLI} from "./CLI";
 import {Deposit} from "./utils/Deposit";
 import {Withdraw} from "./utils/Withdraw";
 import {User} from "./models/user"
+import {displayHistory} from "./utils/CheckHistory";
 
 const startupParts = [
     "   __________  ____  ___       ____  ___    _   ____ __",
@@ -21,15 +22,15 @@ console.log(startupParts.join("\n"));
 const users: User[] = [
     {
         id: 1,
-        name: "Maxence",
+        name: "Richard",
         PIN: "1234",
         balance: 100
     },
     {
         id: 2,
-        name: "Richard",
+        name: "Maxence",
         PIN: "1234",
-        balance: 10
+        balance: 150
     }
 ];
 
@@ -59,7 +60,7 @@ const cli = new CLI([
         title: "Consulter l'historique des mouvements",
         value: "checkHistory",
         action: () => {
-            console.log("Voici l'historique");
+            displayHistory()
         },
     },
     {
